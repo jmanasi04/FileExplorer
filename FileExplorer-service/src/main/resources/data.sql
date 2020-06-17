@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS fileDetail;
+
+CREATE TABLE fileDetail (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  path VARCHAR(250) NOT NULL,
+  fileName VARCHAR(250) NOT NULL,
+  folderName VARCHAR(250) NOT NULL,
+  fileType VARCHAR(250) NOT NULL,
+  fileSize VARCHAR(250) NOT NULL,
+  modificationDate DATETIME NOT NULL,
+  scanDate DATETIME NOT NULL
+);
