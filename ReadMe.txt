@@ -19,3 +19,6 @@ Important points:
 - Update application.properties file in Rest project for input file path and scheduler time interval
 - Application launcher is in rest project: FileExplorerRestApplication.java
 - Execute testcases using JUnit 4
+- Rest apis:
+		1)http://localhost:8080/folders
+		2)http://localhost:8080/filesizes?fileType=xlsx
