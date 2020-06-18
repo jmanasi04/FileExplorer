@@ -6,6 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Entity class. Table is created with the same columns to store data of scanned files and folders
+ * table name : FILE_DETAIL
+ */
 @Entity
 public class FileDetail {
 	@Id
@@ -77,7 +81,7 @@ public class FileDetail {
 	
 	@Override
 	public String toString() {
-		return "FileDetails [path=" + path + ", fileName=" + fileName + ", fileType=" + fileType + ", fileSize="
+		return "FileDetails [path=" + path + ", fileName=" + fileName + ", folderName=" + folderName + ", fileType=" + fileType + ", fileSize="
 				+ fileSize + ", modificationDate=" + modificationDate + ", scanDate=" + scanDate + "]";
 	}
 }

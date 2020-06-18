@@ -1,7 +1,6 @@
 package com.assess.FileExplorer.util;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,14 +9,12 @@ import com.assess.FileExplorer.model.FileDetail;
 
 /**
  * File reader service
- * 
- * @author Manasi J
  */
 public class FileHandler {
 
 	public static List<FileDetail> readFileMetadata(String scanPath) {
 
-		if (scanPath == null) {
+		if (scanPath == null || scanPath == "") {
 			return null;
 		}
 		return readFileMetadata(new File(scanPath));
@@ -51,10 +48,6 @@ public class FileHandler {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
-		File file = new File("D:\\workspace\\Mana\\FileExplorer\\pom.xml");
-		readFileMetadata("E:\\\\test");
-	}
 	/**
 	 * Populate object to store in database
 	 * 
@@ -64,8 +57,9 @@ public class FileHandler {
 	 */
 	public static FileDetail populateFileDetailsObject(File sourceFile) {
 		FileDetail fileDetails = new FileDetail();
-		fileDetails.setPath(sourceFile.getPath());
+		fileDetails.setPath(sourceFile.getParent());
 		fileDetails.setFileName(sourceFile.getName());
+		fileDetails.setFolderName(sourceFile.getParentFile().getName());
 		fileDetails.setFileType(getExtension(sourceFile.getName()));
 		fileDetails.setFileSize(sourceFile.length());
 		fileDetails.setModificationDate(new Date(sourceFile.lastModified()));

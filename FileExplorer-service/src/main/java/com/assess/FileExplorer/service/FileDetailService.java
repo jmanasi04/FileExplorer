@@ -1,9 +1,11 @@
 package com.assess.FileExplorer.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
+import com.assess.FileExplorer.model.FileDetail;
+
 public interface FileDetailService {
 	
+	public void updateAll(List<FileDetail> fileMetadata);
 
 }
